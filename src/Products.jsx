@@ -30,11 +30,12 @@ function Products() {
       <h1>Products Page</h1>
       <p>Welcome to the Products page!</p>
       <p> 1 product</p>
+      <div className="flex justify-evenly justify-center ">
       <input placeholder="Enter Products name" value={productName} onChange={(e)=>setProductName(e.target.value)} className="border border-blue-500 p-2 rounded h-10 w-100 flex-gap-2"></input>
       <input placeholder="Enter Products description" value={description} onChange={(e)=>setDescription(e.target.value)} className="border border-blue-500 p-2 rounded h-10 w-100 flex-gap-2"></input>
       <input placeholder="Enter Products price" value={price} onChange={(e)=>setPrice(e.target.value)} className="border border-blue-500 p-2 rounded h-10 w-100 flex-gap-2 "></input>
-
-      <button onClick={handleAdd} className="bg-blue-500 text-white p-2 rounded m-2 h-10 w-32 inline-block  flex-gap-8">Add</button>
+      </div>
+      <button onClick={handleAdd} className="bg-blue-500 text-white p-2 rounded m-2 h-10 w-32 inline-block  flex-justify-center">Add</button>
       
       <ProductsList products={products}/>
       

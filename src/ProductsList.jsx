@@ -3,8 +3,8 @@ function ProductsList(props) {
   return (
     <div>
       {props.products.map((product, index) => (
-        <div key={index} className="border p-4 m-4 w-80">
-            
+        <div key={index} className="border p-4 m-4 w-80 inline-block">
+
           <h2 className="font-bold text-xl">
             {product.name}
           </h2>
