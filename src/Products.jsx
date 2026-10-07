@@ -1,12 +1,14 @@
 import {useState} from "react";
 import ProductsList from "./ProductsList.jsx";
+import Card from "./Card";
+import stocks from "./data/Stocks";
 function Products() {
     const [productName,setProductName]=useState("");
     const [description,setDescription] =useState("");
     const [price,setPrice] =useState("");
+    const [products,setProducts] =useState([]);
 
-
-    const [products,setProducts]=useState([]);
+   
     const handleAdd = () => {
         if(productName.trim() !=="" &&
            description.trim() !=="" && 
@@ -37,8 +39,8 @@ function Products() {
       </div>
       <button onClick={handleAdd} className="bg-blue-500 text-white p-2 rounded m-2 h-10 w-32 inline-block  flex-justify-center">Add</button>
       
-      <ProductsList products={products}/>
-      
+      <ProductsList products={products} />
+      <Card stocks ={stocks}/>
     </div>
   );
 }
