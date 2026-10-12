@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { lazy,Suspense } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Wishlist = lazy(() => import("./Wishlist.jsx"));
 const Home = lazy(() => import("./Home.jsx"));
@@ -11,7 +13,7 @@ const Cart = lazy(() => import("./Cart.jsx"));
 function App() {
   return (
     <div  className="bg-red-200 h-screen overflow-auto ">
-    <BrowserRouter forceRefresh={true}>
+    <BrowserRouter >
      <Suspense fallback={<h2>Loading...</h2>}>
       <nav className="flex justify-evenly bg-blue-200 overflow-auto p-4">
         <Link to="/home" >{<button className="bg-blue-500 text-white p-2 rounded m-2 h-10 w-32">Home</button>}</Link>
@@ -21,7 +23,6 @@ function App() {
         <Link to="/wishlist">{<button className="bg-blue-500 text-white p-2 rounded m-2 h-10 w-32">Wishlist</button>}</Link>
         <Link to="/cart">{<button className="bg-blue-500 text-white p-2 rounded m-2 h-10 w-32">Cart</button>}</Link>
       </nav>
-
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products />} />
@@ -30,6 +31,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
+        <ToastContainer />
        </Suspense>
     </BrowserRouter>
     </div>

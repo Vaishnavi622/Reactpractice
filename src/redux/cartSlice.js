@@ -1,10 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
+
  const cartSlice = createSlice({
     name:"cart",
     initialState:[],
     reducers:{
         addToCart:(state,action)=>{
             state.push({...action.payload,quantity:1});
+            toast.success("item added to cart");
         },
          
         increaseQuantity:(state,action)=>{
